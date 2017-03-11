@@ -2,9 +2,9 @@ package illich.so.BinaryGup;
 
 import java.util.Arrays;
 
-public class Solution {
+class Solution {
 
-    public int solution(int N) {
+    int solution(int N) {
         String binaryString = Integer.toBinaryString(N);
         if (!binaryString.contains("0") || !binaryString.contains("1")) {
             return 0;
