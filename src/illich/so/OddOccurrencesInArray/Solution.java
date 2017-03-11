@@ -8,17 +8,17 @@ import static java.util.stream.Collectors.toList;
 
 class Solution {
 
-    int getSolution(int[] N) {
+    int getSolution(int[] A) {
         int result = 0;
 
-        for (int element : N) {
+        for (int element : A) {
             result = result ^ element; // Implementation of XOR
         }
         return result;
     }
 
-    int getFunctionalSolution(int[] N) {
-        List<Integer> integerList = stream(N).boxed().collect(toList());
+    int getFunctionalSolution(int[] A) {
+        List<Integer> integerList = stream(A).boxed().collect(toList());
         return integerList.stream()
                 .filter(e -> frequency(integerList, e) == 1)
                 .findFirst()
