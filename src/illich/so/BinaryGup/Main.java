@@ -1,4 +1,4 @@
-package illich.so.BinaryGap;
+package illich.so.BinaryGup;
 
 import static java.lang.Integer.toBinaryString;
 
