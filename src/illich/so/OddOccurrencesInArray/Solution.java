@@ -1,7 +1,6 @@
 package illich.so.OddOccurrencesInArray;
 
 import java.util.List;
-
 import static java.util.Arrays.stream;
 import static java.util.Collections.frequency;
 import static java.util.stream.Collectors.toList;
@@ -10,7 +9,6 @@ class Solution {
 
     int getSolution(int[] A) {
         int result = 0;
-
         for (int element : A) {
             result = result ^ element; // Implementation of XOR
         }
