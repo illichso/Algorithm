@@ -14,12 +14,8 @@ package illich.so.FrogJmp;
 class Solution {
 
     int getSolution(int X, int Y, int D) {
-        int multiplier = (Y - X) / D;
-        int decimalPart = (Y - X) % D;
-        if (decimalPart != 0) {
-            multiplier++;
-        }
-
-        return multiplier;
+        return (Y - X) % D > 0
+                ? (Y - X) / D + 1
+                : (Y - X) / D;
     }
 }
