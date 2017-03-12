@@ -1,25 +1,25 @@
 package illich.so.FrogJmp;
 
+//For example, given:
+//
+//        X = 10
+//        Y = 85
+//        D = 30
+//        the function should return 3, because the frog will be positioned as follows:
+//
+//        after the first jump, at position 10 + 30 = 40
+//        after the second jump, at position 10 + 30 + 30 = 70
+//        after the third jump, at position 10 + 30 + 30 + 30 = 100
+
 class Solution {
-//   For example, given array A = [1,2,3,4,5] and K = 0, the function should return [1,2,3,4,5].
-//   For example, given array A = [1,2,3,4,5] and K = 1, the function should return [5,1,2,3,4].
-//   For example, given array A = [1,2,3,4,5] and K = 2, the function should return [4,5,1,2,3].
-//   For example, given array A = [1,2,3,4,5] and K = 3, the function should return [3,4,5,1,2].
-//   For example, given array A = [1,2,3,4,5] and K = 4, the function should return [2,3,4,5,1].
-//   For example, given array A = [1,2,3,4,5] and K = 5, the function should return [1,2,3,4,5].
 
-
-//   For example, given array A = [3, 8, 9, 7, 6] and K = 2, the function should return [6, 3, 8, 9, 7].
-//   For example, given array A = [3, 8, 9, 7, 6] and K = 2, the function should return [7, 6, 3, 8, 9].
-//   For example, given array A = [3, 8, 9, 7, 6] and K = 3, the function should return [9, 7, 6, 3, 8].
-
-    int[] getSolution(int[] A, int K) {
-        int result[] = new int[A.length];
-
-        for (int i = 0; i < A.length; i++) {
-            int rotatedIndex = i + K < A.length ? i + K : (i + K) % A.length;
-            result[rotatedIndex] = A[i];
+    int getSolution(int X, int Y, int D) {
+        int multiplier = (Y - X) / D;
+        int decimalPart = (Y - X) % D;
+        if (decimalPart != 0) {
+            multiplier++;
         }
-        return result;
+
+        return multiplier;
     }
 }
