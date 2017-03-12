@@ -1,4 +1,4 @@
-package illich.so.CyclicRotation.OddOccurrencesInArray;
+package illich.so.CyclicRotation;
 
 public class Main {
 
