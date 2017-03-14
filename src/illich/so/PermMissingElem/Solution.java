@@ -7,40 +7,21 @@ package illich.so.PermMissingElem;
 //        A[2] = 1
 //        A[3] = 5
 //        the function should return 4, as it is the missing element.
-//0+2 = 2
-//2+3 = 5
-//5+1 = 6
-//6+5 = 1
-//
-//1
-//1+1 = 2
 
 class Solution {
 
     int getSolution(int A[]) {
-        long realElement = 0;
-        long theoreticalElement = 1;
-
+        int theoreticalElement = 1;
         long realSum = 0;
-        long theoreticalSum = 1;
+        long theoreticalSum = theoreticalElement;
 
-        int iterationCounter = 0;
+        for (int realElement : A) {
+            theoreticalElement++;
 
-        for (int element : A) {
-            iterationCounter++;
-
-            realElement = element;
-            theoreticalElement = theoreticalElement + 1;
-
-            realSum = realSum + realElement;
-            theoreticalSum = theoreticalSum + theoreticalElement;
+            realSum += realElement;
+            theoreticalSum += theoreticalElement;
         }
-        System.out.println("Total iterations: " + iterationCounter);
-        System.out.println("theoreticalSum: " + theoreticalSum);
-        System.out.println("realSum: " + realSum);
-        int result = (int) (theoreticalSum - realSum);
-        System.out.println("theoreticalSum - realSum: " + result);
-        return result;
+        return (int) (theoreticalSum - realSum);
     }
 
     int getSolutionNStorage(int A[]) {
