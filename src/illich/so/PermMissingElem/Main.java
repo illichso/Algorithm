@@ -10,12 +10,14 @@ public class Main {
         int A3[] = {1, 2};
         int A4[] = {1, 3};
         int A5[] = {2, 3, 1, 5};
+        int A6[] = {1, 2, 3, 5};
 
         calculateResult(A1);
         calculateResult(A2);
         calculateResult(A3);
         calculateResult(A4);
         calculateResult(A5);
+        calculateResult(A6);
 
     }
 
