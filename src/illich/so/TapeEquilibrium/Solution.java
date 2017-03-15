@@ -17,19 +17,23 @@ package illich.so.TapeEquilibrium;
 //        that, given a non-empty zero-indexed array A of N integers, returns the minimal difference that can be achieved.
 //        the function should return 1, as explained above.
 
+import java.util.stream.IntStream;
+
 class Solution {
 
     int getSolution(int A[]) {
-        int theoreticalElement = 1;
-        long realSum = 0;
-        long theoreticalSum = theoreticalElement;
+        int leftSum = 0;
+        int rightSum = IntStream.of(A).sum();
 
-        for (int realElement : A) {
-            theoreticalElement++;
+        int minDiff = Integer.MAX_VALUE;
 
-            realSum += realElement;
-            theoreticalSum += theoreticalElement;
+        for (int i = 0; i < A.length -1; i++) {
+            leftSum += A[i];
+            rightSum -= A[i];
+            int tempDiff = Math.abs(rightSum - leftSum);
+            minDiff = Math.min(minDiff, tempDiff);
         }
-        return (int) (theoreticalSum - realSum);
+
+        return minDiff;
     }
 }
