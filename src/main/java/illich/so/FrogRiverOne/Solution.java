@@ -1,40 +1,30 @@
 package illich.so.FrogRiverOne;
 
-//For example, array A such that:
+//For example, given X = 5 and array A such that:
 //
-//        A[0] = 4
-//        A[1] = 1
-//        A[2] = 3
-//        A[3] = 2
-//        is a permutation, but array A such that:
-//
-//        A[0] = 4
-//        A[1] = 1
-//        A[2] = 3
-//        is not a permutation, because value 2 is missing.
+//        A[0] = 1
+//        A[1] = 3
+//        A[2] = 1
+//        A[3] = 4
+//        A[4] = 2
+//        A[5] = 3
+//        A[6] = 5
+//        A[7] = 4
+//        the function should return 6, as explained above.
 
 import java.util.HashSet;
 import java.util.Set;
 
 class Solution {
 
-    int getSolution(int A[]) {
-        int theoreticalElement = 0;
-        long realSum = 0;
-        long theoreticalSum = 0;
+    int getSolution(int X, int[] A) {
         Set<Integer> set = new HashSet<>();
-
-        for (int realElement : A) {
-            set.add(realElement);
-
-            theoreticalElement++;
-
-            realSum += realElement;
-            theoreticalSum += theoreticalElement;
+        for (int i = 0; i < A.length; i++) {
+            set.add(A[i]);
+            if (set.size() == X) {
+                return i;
+            }
         }
-        if(set.size() == A.length && theoreticalSum - realSum == 0){
-            return 1;
-        }
-        return 0;
+        return -1;
     }
 }
