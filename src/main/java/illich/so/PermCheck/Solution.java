@@ -13,20 +13,26 @@ package illich.so.PermCheck;
 //        A[2] = 3
 //        is not a permutation, because value 2 is missing.
 
+import java.util.HashSet;
+import java.util.Set;
+
 class Solution {
 
     int getSolution(int A[]) {
         int theoreticalElement = 0;
         long realSum = 0;
         long theoreticalSum = 0;
+        Set<Integer> set = new HashSet<>();
 
         for (int realElement : A) {
+            set.add(realElement);
+
             theoreticalElement++;
 
             realSum += realElement;
             theoreticalSum += theoreticalElement;
         }
-        if(theoreticalSum - realSum == 0){
+        if(set.size() == A.length && theoreticalSum - realSum == 0){
             return 1;
         }
         return 0;
