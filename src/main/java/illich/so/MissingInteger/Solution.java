@@ -16,22 +16,18 @@ import java.util.Set;
 class Solution {
 
     int getSolution(int A[]) {
-        int theoreticalElement = 0;
-        long realSum = 0;
-        long theoreticalSum = 0;
+        int minimalMissingInt = 1;
         Set<Integer> set = new HashSet<>();
 
-        for (int realElement : A) {
-            set.add(realElement);
-
-            theoreticalElement++;
-
-            realSum += realElement;
-            theoreticalSum += theoreticalElement;
+        for (int element : A) {
+            if (element > 0) {
+                set.add(element);
+            }
         }
-        if(set.size() == A.length && theoreticalSum - realSum == 0){
-            return 1;
+
+        while(set.contains(minimalMissingInt)){
+            minimalMissingInt++;
         }
-        return 0;
+        return minimalMissingInt;
     }
 }
