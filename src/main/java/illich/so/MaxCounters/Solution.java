@@ -1,8 +1,5 @@
 package illich.so.MaxCounters;
 
-import java.util.HashSet;
-import java.util.Set;
-
 //For example, given integer N = 5 and array A such that:
 //        A[0] = 3
 //        A[1] = 4
@@ -24,14 +21,20 @@ import java.util.Set;
 
 class Solution {
 
-    int getSolution(int X, int[] A) {
-        Set<Integer> set = new HashSet<>();
-        for (int i = 0; i < A.length; i++) {
-            set.add(A[i]);
-            if (set.size() == X) {
-                return i;
+    int[] getSolution(int N, int[] A) {
+        int[] counters = new int[N];
+        int maxCounter = 0;
+
+        for (int counterIndex : A) {
+            if (counterIndex < N + 1) {
+                counters[counterIndex - 1]++;
+                maxCounter = maxCounter < counters[counterIndex - 1] ? counters[counterIndex - 1] : maxCounter;
+            } else if (maxCounter > 0) {
+                for (int i = 0; i < counters.length; i++) {
+                    counters[i] = maxCounter;
+                }
             }
         }
-        return -1;
+        return counters;
     }
 }
