@@ -1,4 +1,4 @@
-package illich.so.iteration2.OddOccurrencesInArray.CyclicRotation;
+package illich.so.iteration2.CyclicRotation;
 
 public class Main {
 

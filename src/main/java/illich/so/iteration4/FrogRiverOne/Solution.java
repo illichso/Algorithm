@@ -1,4 +1,4 @@
-package illich.so.iteration4.PermCheck.FrogRiverOne;
+package illich.so.iteration4.FrogRiverOne;
 
 //For example, given X = 5 and array A such that:
 //

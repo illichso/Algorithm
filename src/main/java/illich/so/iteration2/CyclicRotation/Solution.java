@@ -1,4 +1,4 @@
-package illich.so.iteration2.OddOccurrencesInArray.CyclicRotation;
+package illich.so.iteration2.CyclicRotation;
 
 class Solution {
 //   For example, given array A = [1,2,3,4,5] and K = 0, the function should return [1,2,3,4,5].

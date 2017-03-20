@@ -1,4 +1,4 @@
-package illich.so.iteration3.FrogJmp.PermMissingElem;
+package illich.so.iteration3.PermMissingElem;
 
 //For example, given array A such that:
 //

@@ -1,4 +1,4 @@
-package illich.so.iteration4.PermCheck.FrogRiverOne;
+package illich.so.iteration4.FrogRiverOne;
 
 public class Main {
 
