@@ -5,22 +5,8 @@ package illich.so.iteration5.PassingCars;
 
 class Solution {
 
-    int getSolution(int A, int B, int K) {
-        if (A % K == 0)
-            return (B - A) / K + 1;
-        else {
-            return (B - (A - A % K)) / K;
-        }
+    int getSolution(int[] A) {
+        return 0;
     }
 
-
-    int getSolution1(int A, int B, int K) {
-        int divisibleCounter = 0;
-        for (int i = A; i <= B; i++) {
-            if (i % K == 0) {
-                divisibleCounter++;
-            }
-        }
-        return divisibleCounter;
-    }
 }
