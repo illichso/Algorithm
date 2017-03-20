@@ -6,6 +6,13 @@ package illich.so.iteration5.CountDiv;
 class Solution {
 
     int getSolution(int A, int B, int K) {
+        int firstDivisibleCounter = (A-1)/K;
+        int secondDivisibleCounter = B/K;
+
+        return secondDivisibleCounter - firstDivisibleCounter;
+    }
+
+    int getSolution1(int A, int B, int K) {
         int divisibleCounter = 0;
         for (int i = A; i <= B; i++) {
             if (i % K == 0) {
