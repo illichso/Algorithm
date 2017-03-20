@@ -9,18 +9,22 @@ public class Main {
         int B1 = 11;
         int K1 = 2;
 
-        int A2 = 0;
-        int B2 = 2_000_000_000;
-        int K2 = 2;
+        int A2 = 6;
+        int B2 = 11;
+        int K2 = 3;
 
         int A3 = 0;
-        int B3 = 2_147_483_647;
+        int B3 = 2_000_000_000;
         int K3 = 2;
 
+        int A4 = 0;
+        int B4 = 2_147_483_647;
+        int K4 = 2;
 
         calculateResult(A1, B1, K1);
         calculateResult(A2, B2, K2);
         calculateResult(A3, B3, K3);
+        calculateResult(A4, B4, K4);
 
     }
 
