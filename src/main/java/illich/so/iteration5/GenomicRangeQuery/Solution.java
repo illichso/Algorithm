@@ -11,19 +11,7 @@ package illich.so.iteration5.GenomicRangeQuery;
 
 class Solution {
 
-    int getSolution(int[] A) {
-        long passingCarCounter = 0;
-        long incrementer = 0;
-        for (int element : A) {
-            if (element == 0) {
-                incrementer++;
-            } else if (element == 1) {
-                passingCarCounter = passingCarCounter + incrementer;
-            }
-        }
-        if (passingCarCounter > 1_000_000_000) {
-            return -1;
-        }
-        return (int) passingCarCounter;
+    int[] getSolution(String[] S, int[] P, int[] Q) {
+        return P;
     }
 }

@@ -5,27 +5,45 @@ public class Main {
     private static Solution solution = new Solution();
 
     public static void main(String[] args) {
-        int[] A1 = {0, 1, 0, 1, 1};
-        int[] A2 = {0, 0, 0, 0, 0};
-        int[] A3 = {1, 1, 1, 1, 1};
+        String[] S1 = {"C", "A", "G", "C", "C", "T", "A"};
+        int[] P1 = {2, 5, 0};
+        int[] Q1 = {4, 5, 6};
 
 
-        calculateResult(A1);
-        calculateResult(A2);
-        calculateResult(A3);
+        calculateResult(S1, P1, Q1);
+
 
     }
 
-    private static void calculateResult(int[] A) {
-        int result = solution.getSolution(A);
-        System.out.println("For A:");
+    private static void calculateResult(String[] S, int[] P, int[] Q) {
+        int[] result = solution.getSolution(S, P, Q);
 
-        for (int element : A) {
+        System.out.println("For S:");
+        for (String element : S) {
             System.out.print(element);
             System.out.print(";");
         }
         System.out.println();
-        System.out.format("the number of pairs of passing cars is: %d", result);
+
+        System.out.println("For P:");
+        for (int element : P) {
+            System.out.print(element);
+            System.out.print(";");
+        }
+        System.out.println();
+
+        System.out.println("For Q:");
+        for (int element : Q) {
+            System.out.print(element);
+            System.out.print(";");
+        }
+        System.out.println();
+        System.out.format("the consecutive answers to all queries are:");
+        System.out.println();
+        for (int element : result) {
+            System.out.print(element);
+            System.out.print(";");
+        }
         System.out.println();
         System.out.println("=================================");
     }
