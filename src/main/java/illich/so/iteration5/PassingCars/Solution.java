@@ -12,20 +12,18 @@ package illich.so.iteration5.PassingCars;
 class Solution {
 
     int getSolution(int[] A) {
-        int passingCarCounter = 0;
-        for (int i = 0; i < A.length; i++) {
-            if (A[i] == 0 && i + 1 < A.length) {
-                for (int j = i + 1; j < A.length; j++) {
-                    if (A[j] == 1) {
-                        passingCarCounter++;
-                    }
-                }
+        long passingCarCounter = 0;
+        long incrementer = 0;
+        for (int element : A) {
+            if (element == 0) {
+                incrementer++;
+            } else if (element == 1) {
+                passingCarCounter = passingCarCounter + incrementer;
             }
         }
-        if(passingCarCounter > 1_000_000_000){
+        if (passingCarCounter > 1_000_000_000) {
             return -1;
         }
-        return passingCarCounter;
+        return (int) passingCarCounter;
     }
-
 }

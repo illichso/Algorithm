@@ -5,10 +5,14 @@ public class Main {
     private static Solution solution = new Solution();
 
     public static void main(String[] args) {
-        int[] A1 = {0,1,0,1,1};
+        int[] A1 = {0, 1, 0, 1, 1};
+        int[] A2 = {0, 0, 0, 0, 0};
+        int[] A3 = {1, 1, 1, 1, 1};
 
 
         calculateResult(A1);
+        calculateResult(A2);
+        calculateResult(A3);
 
     }
 
