@@ -6,6 +6,13 @@ package illich.so.iteration5.PassingCars;
 class Solution {
 
     int getSolution(int[] A) {
+        if (A.length < 2) {
+            return 0;
+        }
+        int initialValue = A[0];
+        for (int i = 1; i < A.length; i++) {
+            
+        }
         return 0;
     }
 
