@@ -5,7 +5,7 @@ public class Main {
     private static Solution solution = new Solution();
 
     public static void main(String[] args) {
-        String[] S1 = {"C", "A", "G", "C", "C", "T", "A"};
+        String S1 = "CAGCCTA";
         int[] P1 = {2, 5, 0};
         int[] Q1 = {4, 5, 6};
 
@@ -15,15 +15,10 @@ public class Main {
 
     }
 
-    private static void calculateResult(String[] S, int[] P, int[] Q) {
+    private static void calculateResult(String S, int[] P, int[] Q) {
         int[] result = solution.getSolution(S, P, Q);
 
-        System.out.println("For S:");
-        for (String element : S) {
-            System.out.print(element);
-            System.out.print(";");
-        }
-        System.out.println();
+        System.out.println("For S:" + S);
 
         System.out.println("For P:");
         for (int element : P) {
