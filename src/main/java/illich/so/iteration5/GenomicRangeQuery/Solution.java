@@ -10,9 +10,9 @@ package illich.so.iteration5.GenomicRangeQuery;
 class Solution {
 
     int[] getSolution(String S, int[] P, int[] Q) {
-        int[] A = new int[S.length() + 1];
-        int[] C = new int[S.length() + 1];
-        int[] G = new int[S.length() + 1];
+        int[] A = new int[S.length()];
+        int[] C = new int[S.length()];
+        int[] G = new int[S.length()];
 
 
         for (int i = 0; i < S.length(); i++) {
@@ -32,18 +32,26 @@ class Solution {
                     break;
 
             }
-            A[i + 1] = A[i] + currentA;
-            C[i + 1] = C[i] + currentC;
-            G[i + 1] = G[i] + currentG;
+
+            A[i] = currentA;
+            C[i] = currentC;
+            G[i] = currentG;
+
+            if (i > 0) {
+                A[i] += A[i - 1];
+                C[i] += C[i - 1];
+                G[i] += G[i - 1];
+            }
+
         }
 
         int[] result = new int[P.length];
         for (int i = 0; i < P.length; i++) {
-            if (A[P[i] + 1] < A[Q[i] + 1]) {
+            if (A[P[i]] < A[Q[i]]) {
                 result[i] = 1; // A
-            } else if (C[P[i] + 1] < C[Q[i] + 1]) {
+            } else if (C[P[i]] < C[Q[i]]) {
                 result[i] = 2; // C
-            } else if (G[P[i] + 1] < G[Q[i] + 1]) {
+            } else if (G[P[i]] < G[Q[i]]) {
                 result[i] = 3; // G
             } else {
                 result[i] = 4; // T there has to be some value
