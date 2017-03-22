@@ -14,8 +14,8 @@ public class Main {
         int[] Q2 = {0, 1, 1};
 
 
-        calculateResult(S1, P1, Q1);
-//        calculateResult(S2, P2, Q2);
+//        calculateResult(S1, P1, Q1);
+        calculateResult(S2, P2, Q2);
 
 
     }

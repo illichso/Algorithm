@@ -37,19 +37,19 @@ class Solution {
             G[i + 1] = G[i] + currentG;
         }
 
-        int[] impactFactor = new int[P.length];
+        int[] result = new int[P.length];
         for (int i = 0; i < P.length; i++) {
-            if (A[Q[i]] >= P[i] && A[Q[i]] <= Q[i]) {
-                impactFactor[i] = 1; // A
-            } else if (C[Q[i]] >= P[i] && C[Q[i]] <= Q[i]) {
-                impactFactor[i] = 2; // C
-            } else if (G[Q[i]] >= P[i] && G[Q[i]] <= Q[i]) {
-                impactFactor[i] = 3; // G
+            if (A[P[i] + 1] < A[Q[i] + 1]) {
+                result[i] = 1; // A
+            } else if (C[P[i] + 1] < C[Q[i] + 1]) {
+                result[i] = 2; // C
+            } else if (G[P[i] + 1] < G[Q[i] + 1]) {
+                result[i] = 3; // G
             } else {
-                impactFactor[i] = 4; // T there has to be some value
+                result[i] = 4; // T there has to be some value
             }
         }
-        return impactFactor;
+        return result;
     }
 
     int[] getSolution1(String[] S, int[] P, int[] Q) {
