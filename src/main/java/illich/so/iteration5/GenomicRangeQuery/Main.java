@@ -9,8 +9,13 @@ public class Main {
         int[] P1 = {2, 5, 0};
         int[] Q1 = {4, 5, 6};
 
+        String S2 = "GT";
+        int[] P2 = {0, 0, 1};
+        int[] Q2 = {0, 1, 1};
+
 
         calculateResult(S1, P1, Q1);
+//        calculateResult(S2, P2, Q2);
 
 
     }

@@ -10,30 +10,46 @@ package illich.so.iteration5.GenomicRangeQuery;
 class Solution {
 
     int[] getSolution(String S, int[] P, int[] Q) {
-        int[] result = new int[P.length];
-        for (int i = 0; i < P.length; i++) {
-            int minImpactFactors = 4;
-            for (int j = P[i]; j <= Q[i]; j++) {
-                int currentImpactFactors = 0;
-                switch (S.charAt(j)) {
-                    case 'A':
-                        currentImpactFactors = 1;
-                        break;
-                    case 'C':
-                        currentImpactFactors = 2;
-                        break;
-                    case 'G':
-                        currentImpactFactors = 3;
-                        break;
-                    case 'T':
-                        currentImpactFactors = 4;
-                        break;
-                }
-                minImpactFactors = Math.min(minImpactFactors, currentImpactFactors);
+        int[] A = new int[S.length() + 1];
+        int[] C = new int[S.length() + 1];
+        int[] G = new int[S.length() + 1];
+
+
+        for (int i = 0; i < S.length(); i++) {
+            int currentA = 0;
+            int currentC = 0;
+            int currentG = 0;
+
+            switch (S.charAt(i)) {
+                case 'A':
+                    currentA = 1;
+                    break;
+                case 'C':
+                    currentC = 1;
+                    break;
+                case 'G':
+                    currentG = 1;
+                    break;
+
             }
-            result[i] = minImpactFactors;
+            A[i + 1] = A[i] + currentA;
+            C[i + 1] = C[i] + currentC;
+            G[i + 1] = G[i] + currentG;
         }
-        return result;
+
+        int[] impactFactor = new int[P.length];
+        for (int i = 0; i < P.length; i++) {
+            if (A[Q[i]] >= P[i] && A[Q[i]] <= Q[i]) {
+                impactFactor[i] = 1; // A
+            } else if (C[Q[i]] >= P[i] && C[Q[i]] <= Q[i]) {
+                impactFactor[i] = 2; // C
+            } else if (G[Q[i]] >= P[i] && G[Q[i]] <= Q[i]) {
+                impactFactor[i] = 3; // G
+            } else {
+                impactFactor[i] = 4; // T there has to be some value
+            }
+        }
+        return impactFactor;
     }
 
     int[] getSolution1(String[] S, int[] P, int[] Q) {
