@@ -15,10 +15,18 @@ import java.util.Set;
 class Solution {
 
     int getSolution(int[] A) {
-        Set<Integer> distinctNumbers = new HashSet<>();
-        for(int element : A){
-            distinctNumbers.add(element);
+        int firstMaxInteger = Integer.MIN_VALUE;
+        int secondMaxInteger = Integer.MIN_VALUE;
+        int thirdMaxInteger = Integer.MIN_VALUE;
+        for (int i = 0; i < A.length; i++) {
+            firstMaxInteger = Math.max(firstMaxInteger, A[i]);
+            if (i + 1 < A.length) {
+                secondMaxInteger = Math.max(secondMaxInteger, A[i + 1]);
+            }
+            if (i + 2 < A.length) {
+                thirdMaxInteger = Math.max(thirdMaxInteger, A[i + 2]);
+            }
         }
-        return distinctNumbers.size();
+        return firstMaxInteger * secondMaxInteger * thirdMaxInteger;
     }
 }

@@ -16,7 +16,7 @@ class Solution {
 
     int getSolution(int[] A) {
         Set<Integer> distinctNumbers = new HashSet<>();
-        for(int element : A){
+        for (int element : A) {
             distinctNumbers.add(element);
         }
         return distinctNumbers.size();

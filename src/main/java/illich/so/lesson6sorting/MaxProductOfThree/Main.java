@@ -6,7 +6,7 @@ public class Main {
 
     //TODO
     public static void main(String[] args) {
-        int[] A1 = {2, 1, 1, 2, 3, 1};
+        int[] A1 = {-3, 1, 2, -2, 5, 6};
 
         calculateResult(A1);
     }
