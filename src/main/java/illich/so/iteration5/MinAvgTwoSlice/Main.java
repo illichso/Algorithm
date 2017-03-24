@@ -5,45 +5,21 @@ public class Main {
     private static Solution solution = new Solution();
 
     public static void main(String[] args) {
-        String S1 = "CAGCCTA";
-        int[] P1 = {2, 5, 0};
-        int[] Q1 = {4, 5, 6};
+        int[] A1 = {4, 2, 2, 5, 1, 5, 8};
 
-        String S2 = "GT";
-        int[] P2 = {0, 0, 1};
-        int[] Q2 = {0, 1, 1};
-
-
-        calculateResult(S1, P1, Q1);
-        calculateResult(S2, P2, Q2);
-
-
+        calculateResult(A1);
     }
 
-    private static void calculateResult(String S, int[] P, int[] Q) {
-        int[] result = solution.getSolution(S, P, Q);
+    private static void calculateResult(int[] A) {
+        int result = solution.getSolution(A);
+        System.out.println("For A:");
 
-        System.out.println("For S:" + S);
-
-        System.out.println("For P:");
-        for (int element : P) {
+        for (int element : A) {
             System.out.print(element);
             System.out.print(";");
         }
         System.out.println();
-
-        System.out.println("For Q:");
-        for (int element : Q) {
-            System.out.print(element);
-            System.out.print(";");
-        }
-        System.out.println();
-        System.out.format("the consecutive answers to all queries are:");
-        System.out.println();
-        for (int element : result) {
-            System.out.print(element);
-            System.out.print(";");
-        }
+        System.out.format("MinAvgTwoSlice: %d", result);
         System.out.println();
         System.out.println("=================================");
     }
