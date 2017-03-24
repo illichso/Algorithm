@@ -3,7 +3,7 @@ package illich.so.iteration5.MinAvgTwoSlice;
 public class Main {
 
     private static Solution solution = new Solution();
-
+//TODO
     public static void main(String[] args) {
         int[] A1 = {4, 2, 2, 5, 1, 5, 8};
 
