@@ -7,8 +7,10 @@ public class Main {
     //TODO
     public static void main(String[] args) {
         int[] A1 = {-3, 1, 2, -2, 5, 6};
+        int[] A2 = {-5, 5, -5, 4};
 
-        calculateResult(A1);
+//        calculateResult(A1);
+        calculateResult(A2);
     }
 
     private static void calculateResult(int[] A) {
