@@ -18,6 +18,7 @@ class Solution {
                 thirdMaxInteger = element;
             }
         }
+
         return firstMaxInteger * secondMaxInteger * thirdMaxInteger;
     }
 }
